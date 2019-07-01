@@ -102,3 +102,22 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Django
+
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+*.out
+.env
+db.sqlite3
+venv/
+.idea
+*.swp
+credentials.yaml
+credentials.yml
+.vscode
+daemon-services/
+!**/migrations/__init__.py
