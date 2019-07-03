@@ -58,3 +58,23 @@ def portfolio(request):
         print(e)
         return JsonResponse({"status":False, "data":data}, status=500)
         
+
+def team(request):
+    try:
+        team_data = team_models.Team_Members.objects.all()
+        data = []
+        full_path = request.build_absolute_uri()
+        
+        path = full_path.split('/api/')[0]
+
+        for t_data in team_data:
+            data.append({
+                'full_name':t_data.full_name,
+                'designation':t_data.designation,
+                'image': path + "/static/" + t_data.image.url.split('/static/')[1]
+            })
+        
+        return JsonResponse({"status":True, "data":data}, status = 200)
+    except Exception as e:
+        print(e)
+        return JsonResponse({"status":False, "data":data}, status = 500)
