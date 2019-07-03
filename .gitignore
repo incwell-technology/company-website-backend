@@ -119,8 +119,9 @@ venv/
 credentials.yaml
 credentials.yml
 .vscode
-daemon-services/
+migrations
 !**/migrations/__init__.py
+daemon-services/
 Portfolio/static/Portfolio/site-data
 careers/static/careers/site-data
 team/static/team/site-data
