@@ -121,3 +121,6 @@ credentials.yml
 .vscode
 daemon-services/
 !**/migrations/__init__.py
+Portfolio/static/Portfolio/site-data
+careers/static/careers/site-data
+team/static/team/site-data
