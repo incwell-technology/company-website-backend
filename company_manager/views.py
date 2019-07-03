@@ -39,3 +39,22 @@ def careers(request):
         return JsonResponse({"status":False, "data":data}, status=500)
         
 
+def portfolio(request):
+    try:
+        portfolio_data = Portfolio_models.Portfolio.objects.all()
+        data = []
+        full_path = request.build_absolute_uri()
+        
+        path = full_path.split('/api/')[0]
+        
+        for p_data in portfolio_data:
+            data.append({
+                "image": path + "/static/"+p_data.image.url.split('/static/')[1],
+                "link":p_data.link
+            })
+
+        return JsonResponse({"status":True, "data":data}, status = 200)
+    except Exception as e:
+        print(e)
+        return JsonResponse({"status":False, "data":data}, status=500)
+        
