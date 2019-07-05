@@ -8,6 +8,9 @@ class Career(models.Model):
     job_description = models.TextField(null=False, blank=False, default="Lorem")
     skills = models.TextField(null=False, blank=False, default="Lorem")
 
+    def __str__(self):
+        return self.title
+
 
 class Career_Apply(models.Model):
     career = models.ForeignKey(Career, on_delete=models.CASCADE)
