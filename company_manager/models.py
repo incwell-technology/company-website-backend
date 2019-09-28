@@ -24,6 +24,8 @@ class Company(SingletonModel):
     phone = models.CharField(max_length=300, null=False, blank=False)
     location = models.CharField(max_length=300, null=False, blank=False)
     email = models.CharField(max_length=300, null=False, blank=False)
-
+    video = models.CharField(max_length=100, null=True, blank=True)
+    
     def __str__(self):
         return f'{self.company_name}'
+
