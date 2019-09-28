@@ -9,4 +9,3 @@ urlpatterns = [
     path('teams', company_views.team),
     path('apply-career', company_views.apply_career)
 ]
-
