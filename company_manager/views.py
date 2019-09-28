@@ -20,7 +20,8 @@ def company_details(request):
             'phone':company.phone,
             'location':company.location,
             'email':company.email,
-            'id':company.id
+            'id':company.id,
+            'video':company.video
         })
         return JsonResponse({"status":True, "data":data}, status=200)
     except (company_manager_models.Company.DoesNotExist) as e:
@@ -96,6 +97,7 @@ def team(request):
 def apply_career(request):
     if request.method == "POST":
         holiday = {}
+        print(request.data)
         serializer = company_serializers.CareerSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
