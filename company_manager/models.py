@@ -27,5 +27,5 @@ class Company(SingletonModel):
     video = models.CharField(max_length=100, null=True, blank=True)
     
     def __str__(self):
-        return f'{self.company_name}'
+        return self.company_name
 
