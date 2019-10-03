@@ -72,7 +72,7 @@ def team(request):
     try:
         team_data = team_models.Team_Members.objects.all()
         data = []
-        full_path = request.build_absolute_uri()
+        full_path = request.build_absolute_uri(https=True)
         
         path = full_path.split('/api/')[0]
 
